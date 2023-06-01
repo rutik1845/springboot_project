@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>registration form</title>
+<style>
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    max-width: 100%;
+  }
+
+  input, button {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+<body>
+<h1 th:text="${msg}"></h1>
+<div class="container">
+<h1>Registration form</h1>
+<form action="register" method="post">
+Name:<input type="text" name="name"><br>
+Email:<input type="email" name="email"><br>
+Contact Number:<input type="text" name="contact"><br>
+Password:<input type="password" name="pass"><br>
+<button type="submit">Register</button>
+</form>
+</div>
+</body>
+</html>

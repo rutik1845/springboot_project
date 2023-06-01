@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Room Booking</title>
+	<style>
+	 .navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0; 
+}
+
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+  .navbar a, .dropdown .dropbtn {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dropdown-content {
+    position: relative;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+}
+
+
+	
+	
+	
+		body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: 10px;
+  }
+}
+		
+	     /* Footer styles */
+      .footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 10px;
+  }
+}
+	</style>
+</head>
+<body>
+<th:block th:replace="navbar.html :: header"></th:block>
+	<h1>Hotel Room Booking</h1>
+	<form th:action="@{../booking/{hid}/{uid}(hid=${h.getId()},uid=${u.getId})}" method="post">
+	
+	<center>
+		<label for="name">Name</label>
+		<input type="text" id="name" name="name" th:value="${u.getName()}"required>
+
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" th:value="${u.getEmail()}"required>
+
+		<label for="phone">Phone</label>
+		<input type="tel" id="phone" name="phone" th:value="${u.getContact()}"required>
+		
+		<label for="RoomNo">Number of Rooms</label>
+		<input type="text"  name="RoomNo" required><br><br>
+
+		<label for="member">Member</label>
+		<input type="text"  name="member" required><br><br>
+		
+		
+		<label for="room-type">Room Type</label>
+		<input type="text" id="room-type" name="room-type" th:value="${h.getCategory()}" required>
+			<!--  <option th:value="${i.category}" value="standard"></option>
+			<option value="deluxe">Deluxe</option>
+			<option value="suite">Non-Ac</option> -->
+		</select>
+		
+		<label for="check-in">Check-In Date</label>
+		<input type="date" id="check-in" name="check_in" required><br>
+		
+		<label for="check-out">Check-In Date</label>
+		<input type="date" id="check-out" name="check_out" required><br>
+		
+		</center>
+		
+		<h1>Price(1 day)</h1>
+		<input type="text"  name="price" th:value="${h.getPrice()}"required>
+		<center>
+		
+		<input type="hidden" th:name="daysDiff" th:id="days-diff" />
+		
+		<input type="submit" id="submit-button" value="Book Room">
+		</center>
+	
+</form>
+<script th:inline="javascript">
+var startDateInput = document.getElementById("check-in");
+var endDateInput = document.getElementById("check-out");
+var submitButton = document.getElementById("submit-button");
+var daysDiffInput = document.getElementById("days-diff");
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    var startDate = new Date(startDateInput.value);
+    var endDate = new Date(endDateInput.value);
+    var daysDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+    // Set the value of the daysDiff input field before submitting the form
+    daysDiffInput.value = daysDiff.toString();
+});
+</script>
+<div class="footer">
+      <p>&copy; 2023 Hotel Rutik Palace. All Rights Reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
+</body>
+</html>

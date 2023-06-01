@@ -1,0 +1,198 @@
+<html>
+	
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+	ul {
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+}
+
+li {
+  margin: 0 10px; 
+}
+
+a {
+  color: #fff; 
+  text-decoration: none; 
+  font-size: 18px; 
+  color:#d4af37;
+}
+
+table {
+  width: 50%; /* set the table width */
+  margin: 0 auto; /* center the table */
+  position: absolute;
+  top:100px;
+  left:25%;
+}
+
+th {	
+  background-color: transparent; /* set a background color for the header cells */
+  text-align: left; /* align the text in the header cells */
+  padding: 8px; /* add some padding to the header cells */
+  font-weight: bold; /* make the text in the header cells bold */
+  border-bottom: 1px solid;
+}
+
+td {
+  border-bottom: 1px solid #ddd; /* set the border-bottom of all td elements */
+  padding: 8px; /* add some padding to the td elements */
+  text-align: left; /* align the text in the td elements */
+}
+
+.mainth
+{
+	
+	background-color: transparent; /* set a background color for the header cells */
+  text-align: center; /* align the text in the header cells */
+  padding: 8px; /* add some padding to the header cells */
+  font-weight: bold; /* make the text in the header cells bold */
+  border-bottom: 1px solid;
+  
+}
+
+/* Add some styles to make it look nicer */
+body {
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+form {
+  margin: 0 auto;
+  width: 300px;
+  text-align: left;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+	input[type="text"], input[type="email"], input[type="tel"], select, input[type="date"], input[type="time"]	 {
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+	  
+	}
+
+input[type="password"]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+input[type="submit"] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  color:#d4af37;
+}
+
+input[type="submit"]:hover {
+  background-color: grey;
+}
+@media  (max-width:600px){
+	body{
+		background-image: linear-gradient( 135deg, #81FFEF 10%, #F067B4 100%); ;
+	}
+}
+</style>
+
+</head>
+<body>
+	
+	<nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+      
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/adminhome">Home Page</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>User Query</th>
+	    <th colspan="1" style="text-align: center;" >Answer</th>
+	</tr>
+	<tr th:each="n:${q}">
+						<td th:text="${n.Uid.getName()}"></td>
+						<td th:text="${n.getMsg()}"></td>
+						<td><input type="text" name="ans"></td>
+				  		<td><a th:href="@{submit/{qid} (qid = ${n.id})}" style="text-decoration: none; color: #d4af37;">Submit</a></td>
+				 		
+						
+					
+
+		<!-- <td><a th:href="@{cdup/{cdname}(cdname=${i.cdname})}" style="text-decoration: none; color: #d4af37;">Update</a></td>
+		<td><a th:href="@{cddelete/{id}(id=${i.id})}" style="text-decoration: none; color: rgb(255, 0, 0);">Delete</a></td>-->
+	</tr>
+</table>
+</body>
+
+</html>
+

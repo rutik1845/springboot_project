@@ -1,0 +1,261 @@
+<html>
+<head>
+ <link rel="stylesheet" href="css/style.css">
+ <style type="text/css">
+ .navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0; 
+}
+
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+  .navbar a, .dropdown .dropbtn {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dropdown-content {
+    position: relative;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+}
+
+
+.header {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  background-image: url(https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=775&q=80); 
+  background-repeat: no-repeat;
+ 	background-size:100% 100%;
+  height: 30rem;
+  width: auto;
+  font-size: 30px;
+	font-family: sans-serif;
+}
+
+.offer {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+}
+
+.offer h2 {
+  margin-bottom: 10px;
+}
+
+.offer p {
+  margin-bottom: 20px;
+}
+
+.facilities {
+  text-align: center;
+  padding: 20px;
+}
+
+.facilities h2 {
+  margin-bottom: 10px;
+}
+
+.facilities ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.facilities li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.room_disp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 96%;
+  margin: auto;
+}
+
+.room {
+  background-color: white;
+  padding: 5%;
+  border-radius: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .header,
+  .offer,
+  .facilities,
+  .room_disp {
+    padding: 10px;
+  }
+
+  .offer h2,
+  .facilities h2 {
+    font-size: 18px;
+  }
+
+  .facilities li {
+    margin: 0 5px;
+  }
+}
+
+
+
+
+     
+      .footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 10px;
+  }
+}
+      
+
+
+      
+
+ </style>
+ </head>
+<body>
+<div class="header">
+     <center><h1>Hotel Rutik Palace</h1></center>
+      <p>Welcome to our hotel</p>
+</div>
+<div>
+<th:block th:replace="navbar.html :: header"></th:block></div>
+
+<div class="offer">
+      <h2>Special Offers</h2>
+      <p>Check out our latest offers and promotions!</p>
+      <a href="offer">View Offers</a>
+</div>
+
+<div class="room_disp">
+    <div class="room">
+        <img src="https://s7d2.scene7.com/is/image/ritzcarlton/pnqrz-deluxe-50665060?$XlargeViewport100pct$" width=100%>
+        <h1>Deluxe</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id justo nec nunc mollis convallis eget vel ligula. </p>
+      </div>
+    <div class="room">
+        <img src="https://www.hotelscombined.ie/himg/25/ef/c1/ostrovok-360740-d7b23e-608929.jpg" width=100%>
+        <h1>Super Deluxe</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id justo nec nunc mollis convallis eget vel ligula. </p>
+      </div>
+    <div class="room">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsDpE2Zj2YYqxaW_oyQFNUUh4X1ijJPV-T5xTjZr6qF2BmyIkAXWFTRG09IyKjjX7rIpvMoeHijrE&usqp=CAU&ec=48665701" width=100%>
+        <h1>Suite</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id justo nec nunc mollis convallis eget vel ligula. </p>
+      </div>
+</div>
+
+<div>
+
+<div class="facilities">
+      <h2>Facilities</h2>
+      <ul>
+        <li>Swimming pool</li>
+        <li>Gym</li>
+        <li>Spa</li>
+        <li>Restaurant</li>
+        <li>Bar</li>
+        <li>Meeting rooms</li>
+      </ul>
+</div>
+</div>
+<div class="footer">
+      <p>&copy; 2023 Hotel Rutik Palace. All Rights Reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
+<h1 th:text="${msg}"></h1>
+<!-- <h1>Welcome, <span th:text="${#session.getAttribute('name')}"></span>!</h1>-->
+
+</body>
+</html>

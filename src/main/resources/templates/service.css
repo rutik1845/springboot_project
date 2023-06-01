@@ -1,0 +1,290 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+:root{
+    --navbar-height:59px;
+}
+
+/* Navigation Bar*/ 
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+/* Navigation Bar: Logo and Image */ 
+#logo {
+   margin: 10px 34px; 
+}
+
+#logo img{
+    height: 56px;
+    margin:3px  6px;
+    
+}
+/* Navigation Bar:List styleing*/
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    
+}
+#navbar ul{
+    display: flex;
+    font-family: 'Courgette', cursive;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+#navbar ul li{
+        list-style: none;
+        font-size: 1.3rem;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+    
+}
+
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 441px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before{
+    content: "";
+    position: absolute;
+    background: url('../bg.jpg') no-repeat center center/cover;
+    height: 70%;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+}
+
+#home h1{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+#home p{
+    color: white;
+    text-align: center;
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+
+#services{
+    margin: 34px;
+    display: flex;
+}
+
+
+
+#services .box{
+    border: 2px solid brown;
+    margin-bottom: 20px;
+    padding: 34px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    background-color: rgb(193, 206, 206);
+}
+
+#services .box img{
+    height: 160px;
+    margin: auto;
+    display: block;
+}
+
+#services .box p{
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+/* Contact Section */
+#contact{
+    position: relative;
+}
+#contact::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background: url('../contact.jpg') no-repeat center center/cover;
+
+}
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+#contact-box input, 
+#contact-box textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+} 
+
+#contact-box form{
+    width: 40%;
+}
+
+#contact-box label{
+   font-size: 1.3rem;
+   font-family: 'Rubik Bubbles', cursive;
+
+}
+
+
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+    text-align: center;
+}
+
+
+
+.h-primary{
+    font-size: 2.8rem;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Monoton', cursive;
+}
+
+.h-secondary{
+    font-size: 2.8rem;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Courgette', cursive;
+    
+}
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: rgb(81, 130, 235);
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+
+}
+
+/* Login page*/
+
+.Box2 {
+ 
+    border-radius: 30px;
+    width: 50%;
+    height: 100;
+    padding:120px;
+    background: url('../login.jpg') no-repeat center center/cover;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 120px;
+    color: black;
+    text-align: center;
+}
+
+.username {
+    
+    font-family:'Rubik Bubbles', cursive; 
+}
+
+.password {
+    
+    font-family:'Rubik Bubbles', cursive; 
+}
+
+.login{
+    font-family: 'Courgette', cursive;
+}
+
+.btnn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: rgb(81, 130, 235);
+    color: white;
+    margin: 17px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+
+
+
+.regbox{
+    border-radius: 60px;
+    height: 80%;
+    display: block;
+    padding:100px;
+    background: url('../sign.jpg') no-repeat center center/cover;
+    text-decoration: none;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 120px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family:'Rubik Bubbles', cursive; 
+    font-size: 2rem;
+
+}
+.regform input{
+    width: 30%;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.regform{
+    font-size: 1.5rem;
+    font-family: 'Courgette', cursive;
+    display: block;
+
+}
+
+.regbox-img{
+    border-image: auto;
+    align-items:center;
+    
+}

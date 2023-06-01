@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+</head>
+<style>
+    /* Body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Welcome container styles */
+.welcome-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-container h1 {
+  font-size: 36px;
+}
+
+.welcome-container p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Product grid styles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt="" />
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/adminhome">Home Page</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="welcome-container">
+    <div class="container">
+      <h1>Welcome Back, Admin</h1>
+      <p>Manage your data from this Admin Panel</p>
+    </div>
+  </div>
+
+  <div class="container product-grid">
+    <div class="product-card">
+        <div class="card-body text-center">
+            <h4 class="card-title">Users</h4>
+            <p>---------------------------------------------</p>
+            <p class="card-text">Manage the Users here.</p>
+            <a href="getuser" class="card-link btn btn-primary">User</a>
+
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="card-body text-center">
+            <h4 class="card-title">Hotel</h4>
+            <p>---------------------------------------------</p>
+            <p class="card-text">Manage all the Hotel Information here.</p>
+            <a href="get" class="card-link btn btn-primary">Hotel</a>
+
+        </div>
+    </div>
+    <div class="product-card">
+    <div class="card-body text-center">
+        <h4 class="card-title">Booking_Info</h4>
+        <p>---------------------------------------------</p>
+        <p class="card-text">Manage all the Booking_Info here.</p>
+        <a href="getorder" class="card-link btn btn-primary">Booking_info</a>
+    </div>
+    </div>
+      <div class="product-card">
+      <div class="card-body text-center">
+        <h4 class="card-title">Customer Query</h4>
+        <p>---------------------------------------------</p>
+        <p class="card-text">Manage all the customer Query here.</p>
+        <a href="getquestion" class="card-link btn btn-primary">Query</a>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

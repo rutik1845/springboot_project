@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title>Login Page</title>
+	<style>
+		body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+form {
+  width: 80%;
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+
+@media screen and (max-width: 600px) {
+  form {
+    width: 90%;
+  }
+}
+	</style>
+</head>
+<body>
+	<h1>Login Page</h1>
+	<h1 th:text="${msg}"></h1>
+	<form action="login" method="post">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="email"><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="pass"><br><br>
+		<button type="submit">User Login</button>
+		<a href="reg">register here</a>
+	</form>
+</body>
+</html>
+
+<!-- <h1 th:text="${msg}"></h1>
+<form action="login" method="post">
+name:<input type="text" name="email"><br>
+password:<input type="password" name="pass"><br>
+<input type="submit" value="login">
+</form> -->

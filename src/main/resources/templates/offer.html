@@ -1,0 +1,336 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		form {
+			width: 50%;
+			margin: auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="text"],
+		input[type="password"] {
+			display: block;
+			padding: 10px;
+			margin-bottom: 20px;
+			width: 100%;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		}
+		button[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+		button[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>Login Page</h1>
+	<form action="#" method="post">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username"><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br><br>
+		<button type="submit" name="user_login" formaction="user_login.html">User Login</button>
+		<button type="submit" name="admin_login" formaction="admin_login.html">Admin Login</button>
+	</form>
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			text-transform: uppercase;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			transition: background-color 0.3s ease;
+		}
+		.button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>Login Page</h1>
+	<div class="container">
+		<button class="button" onclick="location.href='user_login.html'">User Login</button>
+		<button class="button" onclick="location.href='admin_login.html'">Admin Login</button>
+	</div>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Offers</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0; 
+}
+
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+  .navbar a, .dropdown .dropbtn {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dropdown-content {
+    position: relative;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+}
+
+
+	
+	
+	
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin: 50px auto;
+			max-width: 1200px;
+		}
+		.offer-card {
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			margin: 20px;
+			width: calc(33.33% - 40px);
+			text-align: center;
+			padding: 20px;
+			transition: transform 0.3s ease;
+		}
+		.offer-card:hover {
+			transform: translateY(-10px);
+		}
+		.offer-image {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 5px;
+			margin-bottom: 10px;
+		}
+		.offer-title {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.offer-description {
+			margin-bottom: 10px;
+		}
+		.offer-price {
+			font-size: 36px;
+			font-weight: bold;
+			color: #4CAF50;
+			margin-bottom: 20px;
+		}
+		@media (max-width: 768px) {
+			.offer-card {
+				width: calc(50% - 40px);
+			}
+		}
+		@media (max-width: 480px) {
+			.offer-card {
+				width: calc(100% - 40px);
+			}
+		}
+		
+    
+      .footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 10px;
+  }
+}
+	</style>
+</head>
+<body>
+<th:block th:replace="navbar.html :: header"></th:block>
+<form action="service">
+	<h1>Hotel Offers</h1>
+	<div class="container">
+		<div class="offer-card">
+			<img class="offer-image" src="https://imgcld.yatra.com/ytimages/image/upload/t_hotel_yatra_details_desktop/v1440067733/Domestic%20Hotels/Hotels_Kolkata/Hotel%20Casa%20Fortuna/Deluxe%20Double%20Room%202.jpg" alt="Offer Image">
+			<div class="offer-title">Summer Sale</div>
+			<div class="offer-description">Book your summer stay now and get 20% off on room rates.</div>
+			<div class="offer-price">800₹ per night</div>
+			<button class="button">Book Now</button>
+		</div>
+		<div class="offer-card">
+			<img class="offer-image" src="https://www.hotelscombined.ie/himg/25/ef/c1/ostrovok-360740-d7b23e-608929.jpg" alt="Offer Image">
+			<div class="offer-title">Family Package</div>
+			<div class="offer-description">Book a family room for 4 and get 2 complimentary breakfasts and 1 dinner.</div>
+			<div class="offer-price">900₹ per night</div>
+			<button class="button">Book Now</button>
+        </div>
+        <div class="offer-card">
+            <img class="offer-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsDpE2Zj2YYqxaW_oyQFNUUh4X1ijJPV-T5xTjZr6qF2BmyIkAXWFTRG09IyKjjX7rIpvMoeHijrE&usqp=CAU&ec=48665701" alt="Offer Image">
+            <div class="offer-title">Weekend Getaway</div>
+            <div class="offer-description">Book a weekend stay and get a free breakfast for two.</div>
+            <div class="offer-price">1000₹ per night</div>
+            <button class="button">Book Now</button>
+        </div>
+        <div class="offer-card">
+            <img class="offer-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSjlEfgJyRqVnEQDX_V5QiLU3C6CGy6ypZ1Qm8L9DzqtAcb0UFdDy_8OChZWS6E7RGjxulARKP9AE&usqp=CAU&ec=48665701" alt="Offer Image">
+            <div class="offer-title">Business Package</div>
+            <div class="offer-description">Book a business room and get free access to the executive lounge.</div>
+            <div class="offer-price">1500₹ per night</div>
+            <button class="button">Book Now</button>
+        </div>
+    </div>
+</form>
+    <div class="footer">
+      <p>&copy; 2023 Hotel Rutik Palace. All Rights Reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
+</body> 
+</html>
+
+

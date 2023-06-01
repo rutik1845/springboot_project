@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+    <title>Admin Crud</title>
+</head>
+<style>
+/*
+.table tbody td{
+vertical-align: middle;
+}
+
+.btn-incre, .btn-decre{
+box-shadow: none;
+font-size: 25px;
+}
+*/
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+	padding: 20px;
+}
+
+.card-header {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #fff;
+}
+
+.table th,
+.table td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+.table th {
+	background-color: #f9f9f9;
+	font-weight: bold;
+}
+
+.table tbody td {
+	vertical-align: middle;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.btn-danger {
+	background-color: #dc3545;
+	color: #fff;
+}
+
+.btn-danger:hover {
+	background-color: #c82333;
+}
+
+
+@media (max-width: 700px) {
+	.card-header {
+		font-size: 1.5rem;
+	}
+
+	.table th,
+	.table td {
+		padding: 5px;
+		font-size: 0.9rem;
+	}
+
+	.btn {
+		padding: 5px 10px;
+		font-size: 0.9rem;
+	}
+}
+</style>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt="" />
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/adminhome">Home Page</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+<div class="container">
+		<div class="card-header my-3">All Orders</div>
+		<table class="table table-light">
+			<thead>
+				<tr>
+					<th scope="col">available_room</th>
+					<th scope="col">category</th>
+					<th scope="col">img</th>
+					<th scope="col">price</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
+					
+				</tr>
+			</thead>
+			<tbody>
+
+					<tr th:each="n:${h}">
+						<td th:text="${n.available_room}"></td>
+						<td th:text="${n.category}"></td>
+						<td th:text="${n.img}"></td>
+						<td th:text="${n.price}"></td>
+						<td><a class="btn btn-sm btn-danger" th:href="@{getid/{hid} (hid=${n.id})}">Update</a></td>
+						<form th:action="@{delete/{hid} (hid=${n.id})}" method="post">
+						<td><input type="submit" value="Delete" class="btn btn-sm btn-danger"></td>
+						</form>
+					</tr>
+			</tbody>
+		</table>
+			<td><a class="btn btn-sm btn-danger" href="addhotel">Add</a></td>
+	<td><a class="btn btn-sm btn-danger" href="logout">Logout</a></td>
+	</div>
+
+    
+    <!-- th:href="@{changestatus/{bid}(bid=${n.id})} -->
+</body>
+</html>

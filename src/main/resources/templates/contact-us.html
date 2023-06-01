@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us | Hotel Booking System</title>
+	<style>
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0; 
+}
+
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.container {
+  padding-top: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 10%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  background-color: aliceblue;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 120px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  /* Adjust styles for screens up to 768px wide */
+
+  .container {
+    padding: 5%;
+  }
+
+  form {
+    grid-template-columns: 1fr
+    
+    }
+}
+
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+	</style>
+</head>
+<script type="text/javascript">
+function myfunc(){
+alert("Your Question is Submitted Wait for Reply");
+}
+
+</script>
+<body>
+<div>
+<th:block th:replace="navbar.html :: header"></th:block>
+</div>
+	<div class="container">
+		<h1>Contact Us</h1>
+		<form action="../query/querysave" method="post">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" th:value="${u.getName()}" required>
+
+			<label for="email">Email:</label>
+			<input type="text" id="email" name="email" th:value="${u.getEmail()}" required>
+
+			<label for="phone">Phone:</label>
+			<input type="text" id="phone" name="phone" th:value="${u.getContact()}" required>
+
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" required></textarea>
+
+			<input type="submit" value="Submit" onclick="myfunc()">
+			<a href="../query/answer">See Response</a>
+		</form>
+	</div>
+	<div>
+	
+	</div>
+	<div class="footer">
+      <p>&copy; 2023 Hotel Rutik Palace. All Rights Reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
+</body>
+</html>

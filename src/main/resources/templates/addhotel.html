@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input,
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+
+@media (max-width: 600px) {
+  form {
+    max-width: 300px;
+  }
+}
+
+</style>
+<body>
+
+<form action="save" th:method="post">
+available_room:<input type="text" name="available_room" ><br>
+category:<input type="text" name="category" ><br>
+img:<input type="file" name="file" ><br>
+price:<input type="text" name="price"><br>
+<button>Update</button>
+</form>
+    
+</body>
+</html>
